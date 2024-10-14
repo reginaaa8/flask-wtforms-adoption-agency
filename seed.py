@@ -23,8 +23,7 @@ doug = Pet(name="Doug",
                notes="Loves to nap.")
 
 bella = Pet(name="Bella", 
-               species="cat", 
-               photo_url="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8fHww", 
+               species="cat",
                age=9, 
                notes="Will nap all day if you let her.")
 
