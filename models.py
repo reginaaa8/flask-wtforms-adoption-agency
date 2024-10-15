@@ -1,5 +1,7 @@
 """Models for pets"""
 
+default_img = "https://media.istockphoto.com/id/924005884/vector/animal-paw-vector-icon.jpg?s=612x612&w=0&k=20&c=oIN8cVbRTaFZDDfNTFZQPoB7NOILE0n3LiKALGPt9mI="
+
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -22,7 +24,8 @@ class Pet(db.Model):
     species = db.Column(db.String, 
                      nullable=False)
     
-    photo_url = db.Column(db.String)
+    photo_url = db.Column(db.String,
+                          default=default_img)
 
     age = db.Column(db.Integer)
 

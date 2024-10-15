@@ -3,19 +3,19 @@
 {% block content %}
 <h1>Pets</h1>
 
+<div class="row">
 {% for pet in pets %}
-<div>
-    <img src="{{pet.photo_url}}">
-    <a href="">{{pet.name}} 
-        {% if pet.available ==True %}
-        <b>is available!</b>
-        {% endif %}
-    </a>
-</div>
+    <div class="col-3">
+    {% if pet.photo_url %}
+        <img class="img-thumbnail" src="{{pet.photo_url}}" alt="{{pet.name}}">
+    {% endif %}
+    <a href="" class="link-primary link-underline-opacity-0">{{pet.name}}</a> {% if pet.available ==True %} <b>is available!</b> {% endif %}
+    </div>
 {% endfor %}
+</div>
 
 <div>
-    <a href="/add">Add Pet</a>
+    <a href="/add" class="btn btn-primary">Add Pet</a>
 </div>
 
 {% endblock %}

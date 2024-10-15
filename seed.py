@@ -18,7 +18,7 @@ buddy = Pet(name="Buddy",
 
 doug = Pet(name="Doug", 
                species="cat", 
-               photo_url="https://plus.unsplash.com/premium_photo-1673967831980-1d377baaded2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2F0c3xlbnwwfHwwfHx8MA%3D%3D", 
+               photo_url="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8fHwwhttps://images.unsplash.com/photo-1472491235688-bdc81a63246e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8fHww", 
                age=7, 
                notes="Loves to nap.")
 
