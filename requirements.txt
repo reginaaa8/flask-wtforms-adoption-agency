@@ -7,6 +7,7 @@ Flask==3.0.3
 Flask-DebugToolbar==0.16.0
 flask-shell-ipython==0.5.3
 Flask-SQLAlchemy==3.1.1
+Flask-WTF==1.2.1
 ipython==8.28.0
 itsdangerous==2.2.0
 jedi==0.19.1
@@ -28,3 +29,4 @@ traitlets==5.14.3
 typing_extensions==4.12.2
 wcwidth==0.2.13
 Werkzeug==3.0.4
+WTForms==3.1.2
