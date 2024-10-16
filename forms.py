@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, SelectField, TextAreaField
+from wtforms import StringField, IntegerField, SelectField, TextAreaField, BooleanField
+from wtforms.validators import Optional, URL, NumberRange, Length
 
 class AddPetForm(FlaskForm):
     name = StringField("Pet Name")
@@ -15,3 +16,13 @@ class AddPetForm(FlaskForm):
 
     notes = TextAreaField("Notes", 
                           validators=[Optional(), Length(min=10)])
+    
+
+class EditPetForm(FlaskForm):
+    photo_url = StringField("Photo Url", 
+                            validators=[URL(), Optional()])
+    
+    notes = TextAreaField("Notes", 
+                          validators=[Optional(), Length(min=10)])
+    
+    available = BooleanField("Available?")

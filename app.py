@@ -2,7 +2,7 @@
 from flask import Flask, render_template, redirect
 from flask_debugtoolbar import DebugToolbarExtension
 from models import db, connect_db, Pet
-from forms import AddPetForm
+from forms import AddPetForm, EditPetForm
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql:///pets"
@@ -34,7 +34,7 @@ def show_add_pet_form():
             data.pop('photo_url', None) #removes this so that the default photo is used if user does not upload one
         
         new_pet = Pet(**data)
-        
+
         db.session.add(new_pet)
         db.session.commit()
 
@@ -42,3 +42,20 @@ def show_add_pet_form():
     
     else:
         return render_template("add_pet_form.html", form=form)
+    
+@app.route('/<int:pet_id>', methods=["GET", "POST"])
+def show_pet_details(pet_id):
+    """show details about a pet, and a form to edit the pet"""
+    pet = Pet.query.get_or_404(pet_id)
+    form = EditPetForm(obj=pet)
+
+    if form.validate_on_submit():
+        pet.notes = form.notes.data
+        pet.available = form.available.data
+        pet.photo_url = form.photo_url.data
+        
+        db.session.commit()
+        return redirect(f'/{pet_id}')
+    
+    else:
+        return render_template("pet_details.html", pet=pet, form=form)

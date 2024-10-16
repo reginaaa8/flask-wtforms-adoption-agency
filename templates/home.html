@@ -9,7 +9,7 @@
     {% if pet.photo_url %}
         <img class="img-thumbnail" src="{{pet.photo_url}}" alt="{{pet.name}}">
     {% endif %}
-    <a href="" class="link-primary link-underline-opacity-0">{{pet.name}}</a> {% if pet.available ==True %} <b>is available!</b> {% endif %}
+    <a href="/{{pet.id}}" class="link-primary link-underline-opacity-0">{{pet.name}}</a> {% if pet.available ==True %} <b>is available!</b> {% endif %}
     </div>
 {% endfor %}
 </div>
